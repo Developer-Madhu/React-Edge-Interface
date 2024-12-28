@@ -5,6 +5,7 @@ import cloud from '../assets/cloud.png'
 const Stock = () => {
 
   const [data, setData] = useState('');
+  const [data2, setData2] = useState('');
 
   useEffect(() => {
     const fetchData = async (c) => {
@@ -15,22 +16,27 @@ const Stock = () => {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const result = await response.json();
-        const result_2 = await dailyresponse.json()
-        console.log(result_2)
-        // console.log(result)
-        
-        // setData( {
-        //   marketRegion : result.markets[8].region,
-        //   marketType : result.markets[8].market_type,
-        //   marketStatus : result.markets[8].current_status
-        // })
+        const result_2 = await dailyresponse.json();
+        // console.log(result_2)
+        // console.log(result) 
 
-  
+        setData({
+          marketRegion: result.markets[8].region,
+          marketType: result.markets[8].market_type,
+          marketStatus: result.markets[8].current_status
+        })
+
+        setData2({
+          presentTime: result_2["Time Series (Daily)"]
+        })
+        console.log(data2.presentTime)
+
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
     fetchData();
+
   }, []);
 
   return (

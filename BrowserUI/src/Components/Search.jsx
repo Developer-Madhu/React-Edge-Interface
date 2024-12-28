@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Search.css'
 import clear from '../assets/clear.png'
@@ -70,7 +70,7 @@ const Search = () => {
         <div className="searchbox">
           <img src={google} alt="" />
           <form target='_blank' method='get' action="https://www.google.com/search">
-            <input type="text" placeholder='Search Google' />
+            <input type="text" name='q' placeholder='Search Google' />
           </form>
         </div>
 
@@ -101,7 +101,9 @@ const Search = () => {
             <p><span>Info</span> : {weatherData.desc}</p>
           </div>
         </div>
+        
         <br />
+        
         <div className="sublinks">
 
           <div className='cont1'>
@@ -126,7 +128,7 @@ const Search = () => {
               <img src={notion} alt="" />
             </div>
             <div>
-              <img style={{backgroundColor:'white'}} src={chatgpt} alt="" />
+              <img style={{ backgroundColor: 'white' }} src={chatgpt} alt="" />
             </div>
             <div>
               <img src={gemini} alt="" />
