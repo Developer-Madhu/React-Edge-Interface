@@ -86,3 +86,6 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     justify-content: space-evenly;
 }
+#type, #date{
+    color: greenyellow;
+}

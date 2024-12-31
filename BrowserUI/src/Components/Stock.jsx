@@ -18,7 +18,7 @@ const Stock = () => {
         }
         const result = await response.json();
         const result_2 = await dailyresponse.json();
-        console.log(result_2)
+        // console.log(result_2)
 
         const timeSeries = result_2["Time Series (Daily)"]
 
@@ -27,18 +27,20 @@ const Stock = () => {
         // Get the latest date
         const latestDate = dates[0];
         const latestData = timeSeries[latestDate];
+        const openval = latestData["1. open"]
+        const closeval = latestData["4. close"]
+        // console.log("Latest Date:", latestDate);
+        // console.log("Latest Data:", latestData);
 
-        console.log("Latest Date:", latestDate);
-        console.log("Latest Data:", latestData);
-
-        // console.log(result) 
+        console.log(result) 
 
         setData({
           marketRegion: result.markets[8].region,
           marketType: result.markets[8].market_type,
           marketStatus: result.markets[8].current_status,
           marketDate: latestDate,
-          open: latestData["1. open"]
+          open: openval.toFixed(2),
+          close: closeval.toFixed(2)
         })
 
         setData2({
@@ -60,12 +62,12 @@ const Stock = () => {
       <div className='div1'>
         <h1>{data.marketRegion}</h1>
         <div className="txt">
-          <h3>{data.marketType} - {data.marketStatus}</h3>
-          <p>{data.marketDate}</p>
+          <h3><span id='type'>{data.marketType}</span> - {data.marketStatus}</h3>
+          <p id='date'>{data.marketDate}</p>
         </div>
         <div className="txt">
-          <h3>Open - {data.open}</h3>
-          <h3>Close - {data.close}</h3>
+          <h3><span>Open</span> - {data.open}</h3>
+          <h3><span>Close</span> - {data.close}</h3>
         </div>
       </div>
 
@@ -97,12 +99,12 @@ const Stock = () => {
       <div className='div1'>
         <h1>{data.marketRegion}</h1>
         <div className="txt">
-          <h3>{data.marketType} - {data.marketStatus}</h3>
-          <p>{data.marketDate}</p>
+          <h3><span id='type'>{data.marketType}</span> - {data.marketStatus}</h3>
+          <p id='date'>{data.marketDate}</p>
         </div>
         <div className="txt">
-          <h3>Open - {data.open}</h3>
-          <h3>Close - {data.close}</h3>
+          <h3><span>Open</span> - {data.open}</h3>
+          <h3><span>Close</span> - {data.close}</h3>
         </div>
       </div>
     </div>
