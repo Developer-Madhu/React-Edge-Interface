@@ -20,7 +20,7 @@ const Stock = () => {
         const result = await response.json();
         const result_2 = await dailyresponse.json();
         const result_3 = await overview.json();
-        // console.log(result_3)
+        console.log(result_3)
         // console.log(result_2)
 
         const timeSeries = result_2["Time Series (Daily)"]
@@ -32,7 +32,7 @@ const Stock = () => {
         const openval = latestData["1. open"]
         const closeval = latestData["4. close"]
 
-        console.log(result)
+        // console.log(result)
 
         setData({
           marketRegion: result.markets[8].region,

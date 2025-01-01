@@ -147,31 +147,31 @@ const Search = () => {
 
           <div className='cont1'>
             <div>
-              <img src={google2} alt="" />
+              <a href="https://www.google.com/search" target='blank'><img src={google2} alt="" /></a>
             </div>
             <div>
-              <img src={irctc} alt="" />
+              <a href="https://www.irctc.co.in/nget" target='blank'><img src={irctc} alt="" /></a>
             </div>
             <div>
-              <img src={youtube} alt="" />
+              <a href="https://www.youtube.com" target='blank'><img src={youtube} alt="" /></a>
             </div>
             <div>
-              <img src={netflix} alt="" />
+              <a href="https://www.netflix.com" target='blank'><img src={netflix} alt="" /></a>
             </div>
           </div>
 
-          <div className='cont1'>
+          <div className='cont1'>   
             <div>
-              <img src={github} alt="" />
+              <a href="https://www.github.com" target='blank'><img src={github} alt="" /></a>
             </div>
             <div>
-              <img src={spotify} alt="" />
+              <a href="https://open.spotify.com" target='blank'><img src={spotify} alt="" /></a>
             </div>
             <div>
-              <img src={replit} alt="" />
+              <a href="https://www.replit.com" target='blank'><img src={replit} alt="" /></a>
             </div>
             <div>
-              <img src={w3} alt="" />
+              <a href="https://www.w3schools.com/" target='blank'><img src={w3} alt="" /></a>
             </div>
           </div>
 
