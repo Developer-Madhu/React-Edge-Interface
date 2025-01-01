@@ -1,5 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
 import './Search.css'
 import clear from '../assets/clear.png'
 import cloud from '../assets/cloud.png'
@@ -10,7 +9,7 @@ import google from '../assets/google.png'
 import notion from '../assets/notion.png'
 import indmoney from '../assets/indmoney.jpg'
 import groww from '../assets/groww.png'
-import netflix from '../assets/netflix.jpg'
+import netflix from '../assets/netflix.png'
 import irctc from '../assets/irctc.png'
 import tablogo from '../assets/tablogo.png'
 import replit from '../assets/replit.png'
@@ -25,6 +24,7 @@ import meet from '../assets/meet.png'
 import gamma from '../assets/gamma.png'
 import w3 from '../assets/w3.png'
 import linkedin from '../assets/linkedin.png'
+import google2 from '../assets/google2.png'
 import spotify from '../assets/spotify.png'
 
 const Search = () => {
@@ -93,32 +93,32 @@ const Search = () => {
         <div className="three">
           <div className='minione'>
             <div id='u1'>
-              <img id='i4' src={indmoney} alt="" />
-              <img id='i3' src={groww} alt="" />
+              <a href='https://www.indmoney.com/dashboard' target='blank'><img id='i4' src={indmoney} alt="" /></a>
+              <a href="https://groww.in/"><img id='i3' src={groww} alt="" /></a>
             </div>
             <div id='u2'>
-              <img id='i4' src={linkedin} alt="" />
-              <img id='i1' src={udemy} alt="" />
+              <a href="https://www.linkedin.com/feed/" target='blank'><img id='i4' src={linkedin} alt="" /></a>
+              <a href="https://www.udemy.com/course/web-dev-master/" target='blank'><img id='i1' src={udemy} alt="" /></a>
             </div>
           </div>
           <div className='minione'>
             <div id='u1'>
-              <img id='i4' src={google} alt="" />
-              <img id='i3' src={gmail} alt="" />
+              <a href="https://www.google.com/" target='blank'><img id='i4' src={google} alt="" /></a>
+              <a href="https://mail.google.com/mail/u/0/#inbox" target='blank'><img id='i3' src={gmail} alt="" /></a>
             </div>
             <div id='u2'>
-              <img id='i2' src={meet} alt="" />
-              <img id='i1' src={drive} alt="" />
+              <a href="https://meet.google.com" target='blank'><img id='i2' src={meet} alt="" /></a>
+              <a href="https://drive.google.com/drive/home" target='blank'><img id='i1' src={drive} alt="" /></a>
             </div>
           </div>
           <div className='minione'>
             <div id='u1'>
-              <img id='i4' src={chatgpt} alt="" />
-              <img id='i4' src={gemini} alt="" />
+              <a href="https://chatgpt.com" target='blank'><img id='i4' src={chatgpt} alt="" /></a>
+              <a href="https:/gemini.google.com" target='blank'><img id='i4' src={gemini} alt="" /></a>
             </div>
             <div id='u2'>
-              <img src={notion} alt="" />
-              <img src={gamma} alt="" />
+              <a href="https://www.notion.com/" target='blank'><img src={notion} alt="" /></a>
+              <a href="https://gamma.app/"><img src={gamma} alt="" /></a>
             </div>
           </div>
         </div>
@@ -147,19 +147,20 @@ const Search = () => {
 
           <div className='cont1'>
             <div>
-              <img src={google} alt="" />
+              <img src={google2} alt="" />
             </div>
             <div>
-              <img id='img1' src={irctc} alt="" />
+              <img src={irctc} alt="" />
             </div>
             <div>
-              <img id='img1' src={youtube} alt="" />
+              <img src={youtube} alt="" />
             </div>
             <div>
-              <img id='img2' src={netflix} alt="" />
+              <img src={netflix} alt="" />
             </div>
           </div>
-          <div className='cont2'>
+
+          <div className='cont1'>
             <div>
               <img src={github} alt="" />
             </div>
