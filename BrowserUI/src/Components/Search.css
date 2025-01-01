@@ -3,6 +3,7 @@
     width: 100%;
     height: 500px;
     display: flex;
+    justify-content: center;
 }
 .searchbox{
     background-color: #23243ba9;
@@ -55,10 +56,12 @@
 }
 .links{
     /* background-color: green; */
-    width: 49%;
+    width: 45%;
 }
 .three{
     display: flex;
+    width: 100%;
+    /* background-color: red; */
     justify-content: space-around;
 }
 .three div{
@@ -97,10 +100,12 @@
     border-radius: 12px;
     color: white;
     display: flex;
+    width: 90%;
+    place-self: end;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 42%;
+    height: 42.5%;
 }
 .details{
     margin: 10px;
@@ -123,6 +128,7 @@
 .cont1{
     display: flex;
     width: 90%;
+    align-items: center;
     justify-content: space-around;
 }
 .imglogo{
@@ -139,12 +145,56 @@
     justify-content: space-around;
 }
 .cont1 img{
-    height: 70px;
+    height: 60px;
     border-radius: 50%;
-    width: 60px;
+    width: 100%;
+}
+#img1{
+    width: 125px;
+    height: 65px;
+}
+#img2{
+    width: 70px;
 }
 .cont2 img{
     height: 70px;
     border-radius: 50%;
     width: 70px;
+}
+.minione{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+.minione div{
+    height: 48%;
+    width: 90%;
+    background-color: transparent;
+}
+#u1, #u2{
+    display: flex;
+    justify-content: space-around;
+}
+.minione div img{
+    border-radius: 50%;
+    width: 30%;
+    height: 50px;
+}
+.minione div:hover{
+    border: none;
+}
+#i1{
+    margin-top: 8px;
+    height: 40px;
+}
+#i2{
+    height: 60px;
+    width: 70px;
+}
+#i4{
+    height: 40px;
+    width: 45px;
+    margin-top: 5px;
 }

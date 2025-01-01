@@ -6,7 +6,7 @@ const Stock = () => {
 
   const [data, setData] = useState('');
   const [data2, setData2] = useState('');
-  const [] = useState('')
+  const [us, setUs] = useState('')
 
   useEffect(() => {
     const fetchData = async (c) => {
@@ -18,7 +18,7 @@ const Stock = () => {
         }
         const result = await response.json();
         const result_2 = await dailyresponse.json();
-        // console.log(result_2)
+        console.log(result_2)
 
         const timeSeries = result_2["Time Series (Daily)"]
 
@@ -32,21 +32,20 @@ const Stock = () => {
         // console.log("Latest Date:", latestDate);
         // console.log("Latest Data:", latestData);
 
-        console.log(result) 
+        console.log(result)
 
         setData({
           marketRegion: result.markets[8].region,
           marketType: result.markets[8].market_type,
           marketStatus: result.markets[8].current_status,
           marketDate: latestDate,
-          open: openval.toFixed(2),
-          close: closeval.toFixed(2)
+          open: Math.round(openval),
+          close: Math.round(closeval)
         })
-
         setData2({
           presentTime: result_2["Time Series (Daily)"]
         })
-        console.log(data2)
+        // console.log(data2)
 
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -97,9 +96,9 @@ const Stock = () => {
       </div>
 
       <div className='div1'>
-        <h1>{data.marketRegion}</h1>
+        <h1>{data.marketRegion2}</h1>
         <div className="txt">
-          <h3><span id='type'>{data.marketType}</span> - {data.marketStatus}</h3>
+          <h3><span id='type'>{data.marketType}</span> - {data.marketStatus2}</h3>
           <p id='date'>{data.marketDate}</p>
         </div>
         <div className="txt">

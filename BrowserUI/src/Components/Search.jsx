@@ -8,12 +8,24 @@ import rain from '../assets/rain.png'
 import snow from '../assets/snow.png'
 import google from '../assets/google.png'
 import notion from '../assets/notion.png'
+import indmoney from '../assets/indmoney.jpg'
+import groww from '../assets/groww.png'
+import netflix from '../assets/netflix.jpg'
 import irctc from '../assets/irctc.png'
 import tablogo from '../assets/tablogo.png'
-import chatgpt from '../assets/chatgpt.png'
-import gemini from '../assets/gemini.png'
+import replit from '../assets/replit.png'
+import drive from '../assets/drive.png'
+import youtube from '../assets/youtube.png'
+import chatgpt from '../assets/chatgpt.jpg'
+import gemini from '../assets/gemini.jpeg'
+import udemy from '../assets/udemy.jpeg'
 import gmail from '../assets/gmail.png'
-import github from '../assets/github.jpeg'
+import github from '../assets/github.png'
+import meet from '../assets/meet.png'
+import gamma from '../assets/gamma.png'
+import w3 from '../assets/w3.png'
+import linkedin from '../assets/linkedin.png'
+import spotify from '../assets/spotify.png'
 
 const Search = () => {
 
@@ -79,9 +91,36 @@ const Search = () => {
         </div>
 
         <div className="three">
-          <div></div>
-          <div></div>
-          <div></div>
+          <div className='minione'>
+            <div id='u1'>
+              <img id='i4' src={indmoney} alt="" />
+              <img id='i3' src={groww} alt="" />
+            </div>
+            <div id='u2'>
+              <img id='i4' src={linkedin} alt="" />
+              <img id='i1' src={udemy} alt="" />
+            </div>
+          </div>
+          <div className='minione'>
+            <div id='u1'>
+              <img id='i4' src={google} alt="" />
+              <img id='i3' src={gmail} alt="" />
+            </div>
+            <div id='u2'>
+              <img id='i2' src={meet} alt="" />
+              <img id='i1' src={drive} alt="" />
+            </div>
+          </div>
+          <div className='minione'>
+            <div id='u1'>
+              <img id='i4' src={chatgpt} alt="" />
+              <img id='i4' src={gemini} alt="" />
+            </div>
+            <div id='u2'>
+              <img src={notion} alt="" />
+              <img src={gamma} alt="" />
+            </div>
+          </div>
         </div>
 
       </div>
@@ -101,9 +140,9 @@ const Search = () => {
             <p><span>Info</span> : {weatherData.desc}</p>
           </div>
         </div>
-        
+
         <br />
-        
+
         <div className="sublinks">
 
           <div className='cont1'>
@@ -111,13 +150,13 @@ const Search = () => {
               <img src={google} alt="" />
             </div>
             <div>
-              <img src={irctc} alt="" />
+              <img id='img1' src={irctc} alt="" />
             </div>
             <div>
-              <img src={gmail} alt="" />
+              <img id='img1' src={youtube} alt="" />
             </div>
             <div>
-              <img src={cloud} alt="" />
+              <img id='img2' src={netflix} alt="" />
             </div>
           </div>
           <div className='cont2'>
@@ -125,13 +164,13 @@ const Search = () => {
               <img src={github} alt="" />
             </div>
             <div>
-              <img src={notion} alt="" />
+              <img src={spotify} alt="" />
             </div>
             <div>
-              <img style={{ backgroundColor: 'white' }} src={chatgpt} alt="" />
+              <img src={replit} alt="" />
             </div>
             <div>
-              <img src={gemini} alt="" />
+              <img src={w3} alt="" />
             </div>
           </div>
 
