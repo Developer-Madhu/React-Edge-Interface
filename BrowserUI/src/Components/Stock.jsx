@@ -43,7 +43,13 @@ const Stock = () => {
           primaryExchange: result.markets[0].primary_exchanges,
           marketDate: latestDate,
           open: Math.round(openval),
-          close: Math.round(closeval)
+          close: Math.round(closeval),
+          symbol: result_3.Symbol,
+          high:result_3['52WeekHigh'],
+          low:result_3['52WeekLow'],
+          country:result_3.Country,
+          curr:result_3.Currency,
+          exc:result_3.Exchange
         })
         setData2({
           presentTime: result_2["Time Series (Daily)"]
@@ -77,8 +83,8 @@ const Stock = () => {
 
         <div className="one">
           <div>
-            <h2>Cname</h2>
-            <h3>High</h3>
+            <h2>{data.symbol}</h2>
+            <h3>{data.high}</h3>
             <h3>Low</h3>
           </div>
           <div>
