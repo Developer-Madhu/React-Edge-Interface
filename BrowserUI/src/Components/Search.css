@@ -25,7 +25,6 @@
     justify-content: space-between;
     width: 50%;
     flex-direction: column;
-    /* background-color: blue; */
 }
 .searchbox input{
     height: 60px;
@@ -55,13 +54,11 @@
     left: 15%;
 }
 .links{
-    /* background-color: green; */
     width: 45%;
 }
 .three{
     display: flex;
     width: 100%;
-    /* background-color: red; */
     justify-content: space-around;
 }
 .three div{
@@ -158,11 +155,6 @@
 #img2{
     width: 70px;
 }
-/* .cont2 img{
-    height: 70px;
-    border-radius: 50%;
-    width: 70px;
-} */
 .minione{
     padding: 15px;
     display: flex;
@@ -206,6 +198,3 @@
 .sublinks img:hover{
     cursor: pointer;
 }
-/* #new{
-    height: 100px;
-} */

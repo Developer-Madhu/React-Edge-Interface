@@ -14,12 +14,14 @@ const Stock = () => {
         const response = await fetch(`https://www.alphavantage.co/query?function=MARKET_STATUS&apikey=${import.meta.env.VITE_MARKETID}`);
         const dailyresponse = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=RELIANCE.BSE&outputsize=full&apikey=${import.meta.env.VITE_MARKETID}`)
         const overview = await fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=${import.meta.env.VITE_MARKETID}`)
+        // const overview2 = await fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=INFY&apikey=${import.meta.env.VITE_MARKETID}`)
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const result = await response.json();
         const result_2 = await dailyresponse.json();
         const result_3 = await overview.json();
+        // const result_4 = await overview2.json()
         console.log(result_3)
         // console.log(result_2)
 
@@ -29,27 +31,31 @@ const Stock = () => {
 
         const latestDate = dates[0];
         const latestData = timeSeries[latestDate];
-        const openval = latestData["1. open"]
-        const closeval = latestData["4. close"]
+        // const openval = latestData["1. open"]
+        // const closeval = latestData["4. close"]
 
         // console.log(result)
 
         setData({
           marketRegion: result.markets[8].region,
+          exch: result.markets[8].primary_exchanges,
           marketreg2: result.markets[0].region,
           marketType: result.markets[8].market_type,
           marketStatus: result.markets[8].current_status,
           marketStatus2: result.markets[0].current_status,
           primaryExchange: result.markets[0].primary_exchanges,
           marketDate: latestDate,
-          open: Math.round(openval),
-          close: Math.round(closeval),
           symbol: result_3.Symbol,
-          high:result_3['52WeekHigh'],
-          low:result_3['52WeekLow'],
-          country:result_3.Country,
-          curr:result_3.Currency,
-          exc:result_3.Exchange
+          // s2: result_4.Symbol,
+          high: result_3['52WeekHigh'],
+          low: result_3['52WeekLow'],
+          country: result_3.Country,
+          currency: result_3.Currency,
+          exchange: result_3.Exchange,
+          pe:result_3.PERatio,
+          cname:result_3.Name,
+          sector:result_3.Sector,
+          outshares:result_3.SharesOutstanding
         })
         setData2({
           presentTime: result_2["Time Series (Daily)"]
@@ -74,8 +80,7 @@ const Stock = () => {
           <p id='date'>{data.marketDate}</p>
         </div>
         <div className="txt">
-          <h3><span>Open</span> - {data.open}</h3>
-          <h3><span>Close</span> - {data.close}</h3>
+          <h3>{data.exch}</h3>
         </div>
       </div>
 
@@ -85,25 +90,23 @@ const Stock = () => {
           <div>
             <h2>{data.symbol}</h2>
             <h3>{data.high}</h3>
-            <h3>Low</h3>
+            <h3>{data.low}</h3>
           </div>
           <div>
-          <h2>Cname</h2>
-            <h3>High</h3>
-            <h3>Low</h3>
+            <h2>{data.country}</h2>
+            <h3>{data.currency}</h3>
+            <h3>{data.exchange}</h3>
           </div>
         </div>
 
         <div className="one">
           <div>
-          <h2>Cname</h2>
-            <h3>High</h3>
-            <h3>Low</h3>
+            <h2 id='cname'>{data.cname}</h2>  
           </div>
-          <div>
-          <h2>Cname</h2>
-            <h3>High</h3>
-            <h3>Low</h3>
+          <div class='dets'>
+            <h2>{data.pe}</h2>
+            <h3>{data.sector}</h3>
+            <h3>{data.outshares}</h3>
           </div>
         </div>
 
