@@ -14,16 +14,12 @@ const Stock = () => {
         const response = await fetch(`https://www.alphavantage.co/query?function=MARKET_STATUS&apikey=${import.meta.env.VITE_MARKETID}`);
         const dailyresponse = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=RELIANCE.BSE&outputsize=full&apikey=${import.meta.env.VITE_MARKETID}`)
         const overview = await fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=${import.meta.env.VITE_MARKETID}`)
-        // const overview2 = await fetch(`https://www.alphavantage.co/query?function=OVERVIEW&symbol=INFY&apikey=${import.meta.env.VITE_MARKETID}`)
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const result = await response.json();
         const result_2 = await dailyresponse.json();
         const result_3 = await overview.json();
-        // const result_4 = await overview2.json()
-        console.log(result_3)
-        // console.log(result_2)
 
         const timeSeries = result_2["Time Series (Daily)"]
 
@@ -31,10 +27,6 @@ const Stock = () => {
 
         const latestDate = dates[0];
         const latestData = timeSeries[latestDate];
-        // const openval = latestData["1. open"]
-        // const closeval = latestData["4. close"]
-
-        // console.log(result)
 
         setData({
           marketRegion: result.markets[8].region,
@@ -46,7 +38,6 @@ const Stock = () => {
           primaryExchange: result.markets[0].primary_exchanges,
           marketDate: latestDate,
           symbol: result_3.Symbol,
-          // s2: result_4.Symbol,
           high: result_3['52WeekHigh'],
           low: result_3['52WeekLow'],
           country: result_3.Country,
@@ -60,7 +51,6 @@ const Stock = () => {
         setData2({
           presentTime: result_2["Time Series (Daily)"]
         })
-        // console.log(data2)
 
       } catch (error) {
         console.error('Error fetching data:', error);
