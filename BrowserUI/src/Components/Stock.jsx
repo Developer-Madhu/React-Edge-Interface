@@ -6,10 +6,9 @@ const Stock = () => {
 
   const [data, setData] = useState('');
   const [data2, setData2] = useState('');
-  const [us, setUs] = useState('')
 
   useEffect(() => {
-    const fetchData = async (c) => {
+    const fetchData = async () => {
       try {
         const response = await fetch(`https://www.alphavantage.co/query?function=MARKET_STATUS&apikey=${import.meta.env.VITE_MARKETID}`);
         const dailyresponse = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=RELIANCE.BSE&outputsize=full&apikey=${import.meta.env.VITE_MARKETID}`)
