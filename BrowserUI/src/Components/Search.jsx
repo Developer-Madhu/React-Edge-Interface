@@ -65,7 +65,7 @@ const Search = () => {
     }
   }
   useEffect(() => {
-    search('Vijayawada')
+    search('London')
   })
 
   const timeNow = new Date();
